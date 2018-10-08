@@ -13,3 +13,6 @@ O módulo vitrine disponibiliza os produtos na interface e interage com o módul
 **Comandos de compilação**
 - meteor (Windows)
 - meter.bat (Linux)
+
+**Comando para acessar o banco de dados**
+- meteor mongo
