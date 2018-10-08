@@ -1,0 +1,65 @@
+<div ng-hide="$ctrl.isNotLoggedIn">
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card__supporting-text">
+      <i class="material-icons" align="center">shopping_cart</i>
+      <h3 align="center">Bem vindo ao sistema de administração
+      </h3>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Sistema de administração de produtos. Para utilizá-lo cadastre-se no login acima. Obrigado.
+    </div>
+    <div class="mdl-card__menu">
+      <a class="mdl-js-ripple-effect" href="http://localhost:3002" target="new">
+        <div id="tt3" class="icon material-icons">desktop_mac</div>
+        <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="tt3">
+          Visite nosso site de compras
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="mdl-cell mdl-cell--10-col" ng-show="$ctrl.currentUser">
+  <span class="mdl-layout-title">
+    <b>Histórico de Pedidos</b>
+  </span>
+  <br>
+  <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">
+          <b>Produto</b>
+        </th>
+        <th>
+          <b>Quantidade</b>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+          <b>Nome</b>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+          <b>Endereço</b>
+        </th>
+        <th>
+          <b>Preço</b>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+          <b>Data/Hora do pedido</b>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+          <b>Data de entrega</b>
+        </th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="report in $ctrl.report">
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{report.title}}</td>
+        <td>{{report.quantity}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{report.name}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{report.address}}</td>
+        <td>{{report.price}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{report.register}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{report.deadline}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

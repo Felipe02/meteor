@@ -1,0 +1,54 @@
+<head>
+  <title>Administração</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" ng-app="simple-adm">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">
+          <b>Administração</b>
+        </span>
+        <div class="mdl-grid" style="width:100%;">
+          <div class="mdl-cell mdl-cell--12-col mdl-layout-title">
+            <font size='2'>
+              <login-buttons></login-buttons>
+            </font>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#scroll-tab-1" class="mdl-layout__tab is-active">
+          <font size="2">
+            <b>Produtos</b>
+          </font>
+        </a>
+        <a href="#scroll-tab-2" class="mdl-layout__tab  ">
+          <font size="2">
+            <b>Relatório</b>
+          </font>
+        </a>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <br>
+      <section class=" mdl-layout__tab-panel mdl-cell--12-col is-active" id="scroll-tab-1">
+        <div align="center">
+          <products></products>
+        </div>
+      </section>
+      <section class=" mdl-layout__tab-panel mdl-cell--12-col" id="scroll-tab-2">
+        <div align="center">
+          <report></report>
+        </div>
+      </section>
+    </main>
+    <footer class="blockquote-footer text-righ">
+      <small>
+        <cite title="Source Title">Desenvolvido por Felipe Pereira
+        </cite>
+      </small>
+    </footer>
+  </div>
+</body>
