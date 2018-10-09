@@ -6,8 +6,8 @@ export const Historic = new Mongo.Collection('historic');
 const method = 'POST';
 
 /*
-*  Api para cadastrar os dados 
-*  enviados pelo cliente
+*  Serviço para retornar os  
+*  dados do produto
 */
 if (Meteor.isServer) {
 
@@ -48,7 +48,7 @@ if (Meteor.isServer) {
     });
 
     /*
-     *  Api para cadastrar os dados 
+     *  Serviço para cadastrar os dados 
      *  enviados pelo cliente
     */
     postRoutes.route('/checkout', function (params, req, res, next) {
