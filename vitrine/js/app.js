@@ -4,7 +4,9 @@ const url = "http://localhost:3000/products";
 const urlCheckout = 'http://localhost:3000/checkout';
 const method = ['GET', 'POST'];
 
-/*
+/* App Vitrine 
+ * autor: Felipe Pereira
+ *
  * Consumo do serviço para adicionar 
  * os produtos na interface
 */
@@ -13,25 +15,31 @@ $(document).ready(function () {
         method: method[0],
         url: url,
         success: function (result) {
-            for (let _i = 0; _i < result.length; _i++) {
-                DataPoints.push({
-                    "title": result[_i].title,
-                    "category": result[_i].category,
-                    "description": result[_i].description,
-                    "price": result[_i].price,
-                    "freight": result[_i].freight,
-                    "days": result[_i].days
-                });
-            }
-            for (let _i = 0; _i < DataPoints.length; _i++) {
-                $('#myUL').append(
-                    '<li class="collection-item" onclick="listPosition(' + _i + ')">' +
-                    '<span><b>Título: ' + ' ' + DataPoints[_i].title + '</b></span><br>' +
-                    '<span>Categoria: ' + DataPoints[_i].category + '<span><br>' +
-                    '<span>Preço:</b>R$ ' + DataPoints[_i].price + ',00</span>' +
-                    '<span id=' + _i + ' style="display:none">Descrição: ' + DataPoints[_i].description + '</span>' +
-                    "</li>"
-                );
+
+            if (result.length > 0) {
+                for (let _i = 0; _i < result.length; _i++) {
+                    //Incrementa os elementos no array
+                    DataPoints.push({
+                        "title": result[_i].title,
+                        "category": result[_i].category,
+                        "description": result[_i].description,
+                        "price": result[_i].price,
+                        "freight": result[_i].freight,
+                        "days": result[_i].days
+                    });
+
+                    // Montagem da lista de produtos
+                    $('#myUL').append(
+                        '<li class="collection-item" onclick="listPosition(' + _i + ')">' +
+                        '<span><b>Título: ' + ' ' + result[_i].title + '</b></span><br>' +
+                        '<span>Categoria: ' + result[_i].category + '<span><br>' +
+                        '<span>Preço:</b>R$ ' + result[_i].price + ',00</span>' +
+                        '<span id=' + _i + ' style="display:none">Descrição: ' + result[_i].description + '</span>' +
+                        "</li>");
+                }
+
+            } else {
+                alert("Lista vazia");
             }
         },
         error: function (request, error) {
