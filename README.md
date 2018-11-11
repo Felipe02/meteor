@@ -11,8 +11,8 @@ O módulo vitrine disponibiliza os produtos na interface e interage com o módul
 - Material Design Lite
 
 **Comandos de compilação**
-- meteor (Windows)
-- meteor.bat (Linux)
+- `meteor` (Windows)
+- `meteor.bat` (Linux)
 
 **Comando para acessar o banco de dados**
-- meteor mongo
+- `meteor mongo`
